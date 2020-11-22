@@ -22,7 +22,7 @@ const articleSchema = new mongoose.Schema({
         required: [true, 'The content field is required.']
     },
     comments: {
-        type: Map,
+        type: Array,
         required: false
     }
 });
