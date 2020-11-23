@@ -9,7 +9,7 @@ const PORT = Number(process.env.PORT);
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/api/articles', routes);
+app.use('/api', routes);
 
 // DEFAULT FOR ROOT. i.e: hostname/
 app.use('/', (req, res) => {
