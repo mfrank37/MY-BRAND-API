@@ -1,8 +1,9 @@
 const routes = require('express').Router();
-const articles = require('./articles');
-const questions = require('./questions');
+// const questions = require('./questions');
+// const profile = require('./profile');
+const articlesRouter = require('./articles-routes');
 
-routes.use('/articles', articles);
-routes.use('/questions', questions);
+routes.use('/articles', articlesRouter);
+// routes.use('/questions', questions);
 
 module.exports = routes;
