@@ -18,8 +18,21 @@ const sendQuestion = (req, res) => {
     });
 }
 
-const getQuestions = () => {
-
+const getQuestions = (req, res) => {
+  Question.find({}).sort([
+      ['time', 'descending']
+    ])
+    .then(QUERRIES => {
+      res.status(200).json(QUERRIES);
+      res.send();
+    })
+    .catch(err => {
+      res.status(400).send({
+        code: 'bad-request',
+        message: `Can not get the request. Please use /api/questions to get querries`,
+        mongoError: err
+      });
+    });
 }
 
 module.exports = {
