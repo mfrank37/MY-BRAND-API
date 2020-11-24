@@ -1,7 +1,6 @@
-const sendQuestion = require('express').Router();
-const Question = require('../../models/questionModel');
+const Question = require('../models/questionModel');
 
-sendQuestion.post('/', (req, res) => {
+const sendQuestion = (req, res) => {
   req.body.time = new Date();
   Question.create(req.body)
     .then(QUERRY => {
@@ -17,6 +16,13 @@ sendQuestion.post('/', (req, res) => {
         mongoError: err
       });
     });
-})
+}
 
-module.exports = sendQuestion;
+const getQuestions = () => {
+
+}
+
+module.exports = {
+  sendQuestion,
+  getQuestions
+}
