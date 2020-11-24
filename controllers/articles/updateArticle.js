@@ -21,7 +21,7 @@ const updateArticle = (req, res) => {
         .catch(err => {
           res.status(500).send({
             code: 'not-updated',
-            message: 'Unexpected error caught while updating article. Article may have been deleted.',
+            message: 'Unexpected error caught while updating article.Either some fields have invalid data or Article may have been deleted.',
             mongoError: err
           })
         });
@@ -29,7 +29,7 @@ const updateArticle = (req, res) => {
     .catch(err => {
       res.status(400).send({
         code: 'bad-request',
-        message: 'Bad request. Please ensure the article\'s fields and id in url are all valid',
+        message: 'Bad request. Please ensure the article\'s id in url is valid',
         mongoError: err
       });
     });
