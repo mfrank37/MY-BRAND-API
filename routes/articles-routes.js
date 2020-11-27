@@ -6,10 +6,12 @@ const {
     deleteArticle,
     updateArticle
 } = require('../controllers/articles');
+const { authenticateJWT } = require('../controllers/authenticator');
 
-router.post('/', postArticle);
 router.get('/:id', getArticle);
 router.get('/', getAllArticles);
+router.use('/', authenticateJWT);
+router.post('/', postArticle);
 router.put('/:id', updateArticle);
 router.delete('/:id', deleteArticle);
 

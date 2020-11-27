@@ -37,6 +37,12 @@ const authenticateJWT = (req, res, next) => {
   if (authHeader) {
     const token = authHeader.split(' ')[1];
     jwt.verify(token, accessTokenSecret, (err, USER) => {
+      if(!USER) {
+        return res.status(403).send({
+          code: 'forbidden',
+          message: "you do not have access to this endpoints. Request your administrator for help if you are eligible."
+        });
+      }
       console.log("\x1b[33m !!! User accessing to secured endpoints : \x1b[0m");
       console.table(USER);
       if( (USER.role != 'admin') || err) {
