@@ -18,3 +18,5 @@ app.use('/', badRequest);
 app.listen(PORT || 80, () => {
   console.log("Server listening on port ", PORT);
 });
+
+module.exports = app;
