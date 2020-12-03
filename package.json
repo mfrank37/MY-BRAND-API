@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "coverage":"npm run test && nyc report --report=html --reporter=text && coveralls",
+    "coverage":"npm run test && nyc report --report=html --reporter=text --coverage",
     "test": "set NODE_ENV=test && nyc mocha --timeout 60000 --exit",
     "test-mocha": "mocha --timeout 50000",
     "start": "node index.js",
