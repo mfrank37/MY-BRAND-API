@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "coverage": "npm run test && jest --config=jest.config.js --coverage && cat ./coverage/lcov.info | coveralls",
     "test": "set NODE_ENV=test && nyc mocha --timeout 60000 --exit",
     "test-mocha": "mocha --timeout 50000",
     "start": "node index.js",
