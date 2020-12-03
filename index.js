@@ -14,9 +14,4 @@ app.use(bodyParser.json());
 app.use('/api', routes);
 app.use('/', badRequest);
 
-// start listening
-app.listen(PORT, () => {
-  console.log("Server listening on port ", PORT);
-});
-
 module.exports = app;
