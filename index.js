@@ -14,6 +14,4 @@ app.use(bodyParser.json());
 app.use('/api', routes);
 app.use('/', badRequest);
 
-app.listen(PORT);
-
 module.exports = app;
